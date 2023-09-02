@@ -696,13 +696,13 @@ section .title::after {
 .skills-content .right .js::before {
   width: 50%;
 }
-.skills-content .right .php::before {
-  width: 50%;
+.skills-content .right .python::before {
+  width: 90%;
 }
-.skills-content .right .mysql::before {
+.skills-content .right .c::before {
   width: 85%;
 }
-.skills-content .right .wordpress::before {
+.skills-content .right .django::before {
   width: 75%;
 }
 
