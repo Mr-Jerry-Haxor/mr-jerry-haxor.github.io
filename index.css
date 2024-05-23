@@ -174,7 +174,7 @@ section .title::after {
 /* home section styling */
 .home {
   display: flex;
-  background: url("https://images.pexels.com/photos/4360449/pexels-photo-4360449.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+  background: url("homebg.jpeg")
     no-repeat center;
   height: 100vh;
   color: #fff;
