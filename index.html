@@ -399,6 +399,25 @@
   window.addEventListener("load", function() {
     loader.style.display = "none";
   })
+  $(document).ready(function() {
+      $('#contactForm').on('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        var formData = $(this).serialize(); // Serialize the form data
+
+        $.ajax({
+          type: 'POST',
+          url: 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdd35ycW-36z9hrIlzSllAvCyxBndpsrba5HtCzS9kVtvSskg/formResponse', 
+          data: formData,
+          success: function(response) {
+            alert('Message sent successfully!');
+          },
+          error: function() {
+            alert('There was an error sending your message.');
+          }
+        });
+      });
+    });
 </script>
 </body>
 </html>
