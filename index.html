@@ -322,20 +322,20 @@
       </div>
       <div class="column right">
         <div class="text">Message me</div>
-        <form action="#">
+        <form id="contactForm" action="#">
           <div class="fields">
             <div class="field name">
-              <input type="text" placeholder="Name" required>
+              <input type="text" placeholder="Name" name="entry.1803378037" required>
             </div>
             <div class="field email">
-              <input type="email" placeholder="Email" required>
+              <input type="email" placeholder="Email"  name="entry.1487822122" required>
             </div>
           </div>
           <div class="field">
-            <input type="text" placeholder="Subject" required>
+            <input type="text" placeholder="Subject" name="entry.1640721893" required>
           </div>
           <div class="field textarea">
-            <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
+            <textarea cols="30" rows="10" placeholder="Message.." name="entry.1626299027" required></textarea>
           </div>
           <div class="button-area">
             <button type="submit">Send message</button>
@@ -399,6 +399,25 @@
   window.addEventListener("load", function() {
     loader.style.display = "none";
   })
+  $(document).ready(function() {
+      $('#contactForm').on('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        var formData = $(this).serialize(); // Serialize the form data
+
+        $.ajax({
+          type: 'POST',
+          url: 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdd35ycW-36z9hrIlzSllAvCyxBndpsrba5HtCzS9kVtvSskg/formResponse', 
+          data: formData,
+          success: function(response) {
+            alert('Message sent successfully!');
+          },
+          error: function() {
+            alert('There was an error sending your message.');
+          }
+        });
+      });
+    });
 </script>
 </body>
 </html>
